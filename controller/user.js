@@ -43,7 +43,7 @@ exports.postRegister = async (req, res, next) => {
   user.password = await bcrypt.hash(user.password, salt);
   user
     .save()
-    .then(() => res.status(201).send("success"))
+    .then(() => res.status(201).send({ title: "success" }))
     .catch((err) => res.send(err));
 };
 
